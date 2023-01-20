@@ -26,4 +26,15 @@ abstract class SmartPluginPlatform extends PlatformInterface {
   Future<String?> getPlatformVersion() {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
+
+  Future<String?> getManufacturer() {
+    throw UnimplementedError('platformVersion() has not been implemented.');
+  }
+
+  Future<String?> getBoard();
+  Future<String?> getRadioVersion();
+  Future<String?> getBrand();
+  Future<String?> getDevice();
+  Future<String?> getID();
+  Future<int?> wakeUpAlarmsCount();
 }

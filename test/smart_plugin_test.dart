@@ -7,9 +7,50 @@ import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 class MockSmartPluginPlatform
     with MockPlatformInterfaceMixin
     implements SmartPluginPlatform {
-
   @override
   Future<String?> getPlatformVersion() => Future.value('42');
+
+  @override
+  Future<String?> getManufacturer() {
+    // TODO: implement getManufacturer
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<String?> getBoard() {
+    // TODO: implement getBoard
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<String?> getBrand() {
+    // TODO: implement getBrand
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<String?> getDevice() {
+    // TODO: implement getDevice
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<String?> getID() {
+    // TODO: implement getID
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<String?> getRadioVersion() {
+    // TODO: implement getRadioVersion
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<int?> wakeUpAlarmsCount() {
+    // TODO: implement wakeUpAlarmsCount
+    throw UnimplementedError();
+  }
 }
 
 void main() {
