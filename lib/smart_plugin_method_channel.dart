@@ -54,10 +54,4 @@ class MethodChannelSmartPlugin extends SmartPluginPlatform {
     return radioVersion;
   }
 
-  @override
-  Future<int?> wakeUpAlarmsCount() async {
-    final alarmsCount =
-        await methodChannel.invokeMethod<int>('wakeUpAlarmsCount');
-    return alarmsCount;
-  }
 }

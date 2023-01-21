@@ -1,4 +1,6 @@
 package com.smart.plugin10.smart_plugin;
+import android.app.Activity;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.health.PackageHealthStats;
@@ -61,10 +63,6 @@ public class SmartPlugin implements FlutterPlugin, MethodCallHandler {
         result.success(device);
         break;
       }
-      case "wakeUpAlarmsCount":
-        int alarmsCount = PackageHealthStats.MEASUREMENTS_WAKEUP_ALARMS_COUNT;
-        result.success(alarmsCount);
-        break;
       default:
         result.notImplemented();
         break;

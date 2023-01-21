@@ -60,9 +60,4 @@ class SmartPluginWeb extends SmartPluginPlatform {
     throw UnimplementedError();
   }
   
-  @override
-  Future<int?> wakeUpAlarmsCount() {
-    // TODO: implement wakeUpAlarmsCount
-    throw UnimplementedError();
-  }
 }

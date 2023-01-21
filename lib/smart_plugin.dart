@@ -29,7 +29,5 @@ class SmartPlugin {
     return SmartPluginPlatform.instance.getID();
   }
 
-  Future<int?> wakeUpAlarmsCount() {
-    return SmartPluginPlatform.instance.wakeUpAlarmsCount();
-  }
+
 }

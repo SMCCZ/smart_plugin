@@ -36,5 +36,4 @@ abstract class SmartPluginPlatform extends PlatformInterface {
   Future<String?> getBrand();
   Future<String?> getDevice();
   Future<String?> getID();
-  Future<int?> wakeUpAlarmsCount();
 }
