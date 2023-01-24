@@ -61,7 +61,8 @@ public class SmartPlugin implements FlutterPlugin, MethodCallHandler {
         break;
       }
       case "getCurrentUTCTime": {
-        String device = Instant.now().toString();
+        String time = Instant.now().toString();
+        result.success(time);
         break;
       }
       default:
