@@ -29,5 +29,7 @@ class SmartPlugin {
     return SmartPluginPlatform.instance.getID();
   }
 
-
+  Future<String?> getCurrentUTCTime() {
+    return SmartPluginPlatform.instance.getID();
+  }
 }

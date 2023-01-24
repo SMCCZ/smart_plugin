@@ -1,10 +1,6 @@
 package com.smart.plugin10.smart_plugin;
-import android.app.Activity;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Build;
-import android.os.health.PackageHealthStats;
-import android.telecom.Connection;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -36,7 +32,7 @@ public class SmartPlugin implements FlutterPlugin, MethodCallHandler {
       case "getPlatformVersion":
         String version = _getPlatformVersion();
         result.success("Android " + version);
-        break;
+          break;
       case "getManufacturer":
         String manufacturer = _getManufacturer();
         result.success(manufacturer);
@@ -61,6 +57,11 @@ public class SmartPlugin implements FlutterPlugin, MethodCallHandler {
       case "getID": {
         String device = Build.ID;
         result.success(device);
+
+        break;
+      }
+      case "getCurrentUTCTime": {
+        String device = Instant.now().toString();
         break;
       }
       default:

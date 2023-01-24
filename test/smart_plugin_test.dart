@@ -51,6 +51,12 @@ class MockSmartPluginPlatform
     // TODO: implement wakeUpAlarmsCount
     throw UnimplementedError();
   }
+  
+  @override
+  Future<String?> getCurrentUTCTime() {
+    // TODO: implement getCurrentUTCTime
+    throw UnimplementedError();
+  }
 }
 
 void main() {
