@@ -4,6 +4,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import java.time.Instant;
+
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
@@ -61,7 +63,10 @@ public class SmartPlugin implements FlutterPlugin, MethodCallHandler {
         break;
       }
       case "getCurrentUTCTime": {
-        String time = Instant.now().toString();
+        String time = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+          time = Instant.now().toString();
+        }
         result.success(time);
         break;
       }
