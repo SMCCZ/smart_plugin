@@ -2,7 +2,8 @@ package com.smart.plugin10.smart_plugin;
 
 import android.os.Build;
 import android.widget.Toast;
-
+import android.content.Intent;
+import android.net.Uri;
 import androidx.annotation.NonNull;
 
 import java.time.Instant;
