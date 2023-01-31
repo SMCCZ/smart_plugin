@@ -86,6 +86,7 @@ public class SmartPlugin implements FlutterPlugin, MethodCallHandler {
       }
       case "openUrl": {
        _openUrl();
+        result.success(null);
         break;
       }
       default:
