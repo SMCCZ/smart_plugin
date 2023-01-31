@@ -58,4 +58,9 @@ class MethodChannelSmartPlugin extends SmartPluginPlatform {
   Future<String?> getCurrentUTCTime() async {
     return await methodChannel.invokeMethod("getCurrentUTCTime");
   }
+
+  @override
+  openUrl() async {
+    return await methodChannel.invokeMethod("openUrl");
+  }
 }

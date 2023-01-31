@@ -66,4 +66,10 @@ class SmartPluginWeb extends SmartPluginPlatform {
     throw UnimplementedError();
   }
   
+  @override
+  openUrl() {
+    // TODO: implement openUrl
+    throw UnimplementedError();
+  }
+  
 }

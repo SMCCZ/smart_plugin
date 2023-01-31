@@ -57,6 +57,12 @@ class MockSmartPluginPlatform
     // TODO: implement getCurrentUTCTime
     throw UnimplementedError();
   }
+  
+  @override
+  openUrl() {
+    // TODO: implement openUrl
+    throw UnimplementedError();
+  }
 }
 
 void main() {
