@@ -1,5 +1,6 @@
 package com.smart.plugin10.smart_plugin;
 
+import android.content.Context;
 import android.os.Build;
 import android.widget.Toast;
 import android.content.Intent;
@@ -13,6 +14,7 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
+import io.flutter.plugin.common.PluginRegistry;
 
 /** SmartPlugin */
 public class SmartPlugin implements FlutterPlugin, MethodCallHandler {
@@ -23,6 +25,16 @@ public class SmartPlugin implements FlutterPlugin, MethodCallHandler {
   /// and unregister it
   /// when the Flutter Engine is detached from the Activity
   private MethodChannel channel;
+
+
+  private final Context context;
+  private SmartPlugin(Context context) {
+    this.context = context;
+  }
+  public static void registerWith(PluginRegistry.Registrar registrar) {
+    final MethodChannel channel = new MethodChannel(registrar.messenger(), "smart_plugin");
+    channel.setMethodCallHandler(new SmartPlugin(registrar.context()));
+  }
 
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
@@ -100,5 +112,6 @@ public class SmartPlugin implements FlutterPlugin, MethodCallHandler {
     String url = "https://www.google.com";
     Intent intent = new Intent(Intent.ACTION_VIEW);
     intent.setData(Uri.parse(url));
+    context.startActivity(intent);
   }
 }
