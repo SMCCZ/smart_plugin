@@ -27,14 +27,7 @@ public class SmartPlugin implements FlutterPlugin, MethodCallHandler {
   private MethodChannel channel;
 
 
-  private final Context context;
-  private SmartPlugin(Context context) {
-    this.context = context;
-  }
-  public static void registerWith(PluginRegistry.Registrar registrar) {
-    final MethodChannel channel = new MethodChannel(registrar.messenger(), "smart_plugin");
-    channel.setMethodCallHandler(new SmartPlugin(registrar.context()));
-  }
+
 
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
@@ -85,7 +78,6 @@ public class SmartPlugin implements FlutterPlugin, MethodCallHandler {
         break;
       }
       case "openUrl": {
-       _openUrl();
         result.success(null);
         break;
       }
@@ -109,10 +101,5 @@ public class SmartPlugin implements FlutterPlugin, MethodCallHandler {
     return Build.MANUFACTURER;
   }
 
-  private void _openUrl() {
-    String url = "https://www.google.com";
-    Intent intent = new Intent(Intent.ACTION_VIEW);
-    intent.setData(Uri.parse(url));
-    context.startActivity(intent);
-  }
+
 }
