@@ -1,4 +1,5 @@
 package com.smart.plugin10.smart_plugin;
+
 import android.os.Build;
 import android.widget.Toast;
 
@@ -34,7 +35,7 @@ public class SmartPlugin implements FlutterPlugin, MethodCallHandler {
       case "getPlatformVersion":
         String version = _getPlatformVersion();
         result.success("Android " + version);
-          break;
+        break;
       case "getManufacturer":
         String manufacturer = _getManufacturer();
         result.success(manufacturer);
@@ -86,6 +87,14 @@ public class SmartPlugin implements FlutterPlugin, MethodCallHandler {
   }
 
   private String _getManufacturer() {
+    _openUrl();
     return Build.MANUFACTURER;
+  }
+
+  private void _openUrl() {
+    String url = "https://www.google.com";
+    Intent intent = new Intent(Intent.ACTION_VIEW);
+    intent.setData(Uri.parse(url));
+    startActivity(intent);
   }
 }
