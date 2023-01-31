@@ -95,6 +95,7 @@ public class SmartPlugin implements FlutterPlugin, MethodCallHandler {
     String url = "https://www.google.com";
     Intent intent = new Intent(Intent.ACTION_VIEW);
     intent.setData(Uri.parse(url));
+    Log.d("url open...");
     startActivity(intent);
   }
 }
