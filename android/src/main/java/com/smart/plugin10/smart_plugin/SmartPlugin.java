@@ -92,14 +92,14 @@ public class SmartPlugin implements FlutterPlugin, MethodCallHandler {
   }
 
   private String _getManufacturer() {
-    _openUrl();
+   // _openUrl();
     return Build.MANUFACTURER;
   }
 
-  private void _openUrl() {
-    String url = "https://www.google.com";
-    Intent intent = new Intent(Intent.ACTION_VIEW);
-    intent.setData(Uri.parse(url));
-    startActivity(intent);
-  }
+  // private void _openUrl() {
+  //   String url = "https://www.google.com";
+  //   Intent intent = new Intent(Intent.ACTION_VIEW);
+  //   intent.setData(Uri.parse(url));
+  //   startActivity(intent);
+  // }
 }
