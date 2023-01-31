@@ -32,4 +32,8 @@ class SmartPlugin {
   Future<String?> getCurrentUTCTime() {
     return SmartPluginPlatform.instance.getCurrentUTCTime();
   }
+
+     openUrl() {
+    return SmartPluginPlatform.instance.openUrl();
+  }
 }
