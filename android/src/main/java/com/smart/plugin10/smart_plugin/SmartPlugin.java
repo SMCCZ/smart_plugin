@@ -73,7 +73,7 @@ public class SmartPlugin implements FlutterPlugin, MethodCallHandler {
         break;
       }
       case "openUrl": {
-       _openUrl();;
+       _openUrl();
         break;
       }
       default:
@@ -96,10 +96,9 @@ public class SmartPlugin implements FlutterPlugin, MethodCallHandler {
     return Build.MANUFACTURER;
   }
 
-  // private void _openUrl() {
-  //   String url = "https://www.google.com";
-  //   Intent intent = new Intent(Intent.ACTION_VIEW);
-  //   intent.setData(Uri.parse(url));
-  //   startActivity(intent);
-  // }
+  private void _openUrl() {
+    String url = "https://www.google.com";
+    Intent intent = new Intent(Intent.ACTION_VIEW);
+    intent.setData(Uri.parse(url));
+  }
 }
