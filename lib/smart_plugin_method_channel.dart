@@ -54,4 +54,13 @@ class MethodChannelSmartPlugin extends SmartPluginPlatform {
     return radioVersion;
   }
 
+  @override
+  Future<String?> getCurrentUTCTime() async {
+    return await methodChannel.invokeMethod("getCurrentUTCTime");
+  }
+
+  @override
+  openUrl() async {
+    return await methodChannel.invokeMethod("openUrl");
+  }
 }

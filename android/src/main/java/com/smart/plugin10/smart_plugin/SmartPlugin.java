@@ -1,18 +1,20 @@
 package com.smart.plugin10.smart_plugin;
-import android.app.Activity;
+
+import android.content.Context;
+import android.os.Build;
+import android.widget.Toast;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Build;
-import android.os.health.PackageHealthStats;
-import android.telecom.Connection;
-
 import androidx.annotation.NonNull;
+
+import java.time.Instant;
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
+import io.flutter.plugin.common.PluginRegistry;
 
 /** SmartPlugin */
 public class SmartPlugin implements FlutterPlugin, MethodCallHandler {
@@ -23,6 +25,9 @@ public class SmartPlugin implements FlutterPlugin, MethodCallHandler {
   /// and unregister it
   /// when the Flutter Engine is detached from the Activity
   private MethodChannel channel;
+
+
+
 
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
@@ -61,6 +66,19 @@ public class SmartPlugin implements FlutterPlugin, MethodCallHandler {
       case "getID": {
         String device = Build.ID;
         result.success(device);
+
+        break;
+      }
+      case "getCurrentUTCTime": {
+        String time = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+          time = Instant.now().toString();
+        }
+        result.success(time);
+        break;
+      }
+      case "openUrl": {
+        result.success(null);
         break;
       }
       default:
@@ -79,6 +97,9 @@ public class SmartPlugin implements FlutterPlugin, MethodCallHandler {
   }
 
   private String _getManufacturer() {
+   // _openUrl();
     return Build.MANUFACTURER;
   }
+
+
 }
