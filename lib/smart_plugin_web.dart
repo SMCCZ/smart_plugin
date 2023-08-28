@@ -60,4 +60,16 @@ class SmartPluginWeb extends SmartPluginPlatform {
     throw UnimplementedError();
   }
   
+  @override
+  Future<String?> getCurrentUTCTime() {
+    // TODO: implement getCurrentUTCTime
+    throw UnimplementedError();
+  }
+  
+  @override
+  openUrl() {
+    // TODO: implement openUrl
+    throw UnimplementedError();
+  }
+  
 }
